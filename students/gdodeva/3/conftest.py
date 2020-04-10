@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """Conftest file for homework 3."""
-import pytest
+import pytest  # noqa I001
 import os  # noqa I001
 
 
@@ -9,17 +9,20 @@ dot = '.'
 directory = 'directory'
 test_file = 'testFile.py'
 name_py = 'name.py'
-date_time = '2017-05-12_06:10:10'
+date_time = '2017-01-03_02:02:02'
 
 
 @pytest.fixture(params=[
     ('empty',
         [],
+        [],
      ),
     ('dirsOnly',
         [directory],
+        [directory],
      ),
     ('filesOnly',
+        [test_file],
         [test_file],
      ),
     ('dirsAndFiles',
@@ -27,8 +30,12 @@ date_time = '2017-05-12_06:10:10'
             directory,
             test_file,
         ],
+        [
+            directory,
+            test_file,
+        ],
      ),
-    ])
+])
 def ls_fixture(tmp_path, request):
     """Fixture for ls command."""
     param0 = request.param[0]
@@ -40,7 +47,7 @@ def ls_fixture(tmp_path, request):
             element.join()
         else:
             element.mkdir()
-    yield (path, request.param[1])
+    yield (path, request.param[2])
 
 
 @pytest.fixture(params=[
@@ -58,7 +65,6 @@ def mk_fixture(request):
     yield request.param
     if os.path.isfile(param0):
         os.remove(param0)
-
 
 
 @pytest.fixture(params=[
@@ -82,7 +88,7 @@ def rm_fixture(tmp_path, request):
 
 
 @pytest.fixture(params=[
-    ('conftest1.py', True),
+    ('conftest2.py', True),
     ('unable/.py', False),
     (directory, False),
 ])
@@ -92,12 +98,13 @@ def contains_fixture(tmp_path, request):
     if dot not in param0:
         new_element = tmp_path / param0
         new_element.mkdir()
-    elif param0 == 'conftest1.py':
+    elif param0 == 'conftest2.py':
         my_file = open(param0, 'w+')  # noqa WPS515
         my_file.close()
     yield request.param
     if os.path.isfile(param0):
         os.remove(param0)
+
 
 @pytest.fixture(params=[
     ('empty',
@@ -122,12 +129,12 @@ def contains_fixture(tmp_path, request):
             test_file,
         ],
         [
-            directory,
             test_file,
+            directory,
         ],
      ),
     ('wrongDate',
-        '20147-025-1332_06:10:10',
+        '20137-031-03_02:02:02',
         [test_file],
         'Enter a valid datetime value, using mask Y-M-D_H:M:S',
      )])
