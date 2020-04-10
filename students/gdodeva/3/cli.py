@@ -60,7 +60,7 @@ def contains_entered(file_name):
     return False
 
 
-def since_entered(given_datetime, directory=None):
+def since_entered(given_datetime, directory=None):  # noqa C901
     """Since command functionality."""
     if directory is None:
         directory = os.getcwd()
@@ -71,11 +71,11 @@ def since_entered(given_datetime, directory=None):
             if directory == os.getcwd():
                 file_datetime = datetime.fromtimestamp(
                     os.path.getctime(file_name),
-                    )
+                )
             else:
                 file_datetime = datetime.fromtimestamp(
                     os.path.getctime(directory / file_name),
-                    )
+                )
             if file_datetime > date:
                 files_for_return.append(file_name)
         return files_for_return
