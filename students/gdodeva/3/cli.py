@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 
-"""Homework 3."""
 import argparse
-
-from datetime import datetime
 import os
+from datetime import datetime
 
 
 def create_parser():
@@ -82,7 +80,7 @@ def since_entered(given_datetime, directory=None):
                 files_for_return.append(file_name)
         return files_for_return
     except ValueError:
-        return 'Enter a valid datetime value, using mask Y-M-D_H:M:S'
+        return 'Use mask Y-M-D_H:M:S'
 
 
 def main():
