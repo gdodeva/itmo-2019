@@ -136,7 +136,7 @@ def contains_fixture(tmp_path, request):
     ('wrongDate',
         '20137-031-03_02:02:02',
         [test_file],
-        'Enter a valid datetime value, using mask Y-M-D_H:M:S',
+        'Use mask Y-M-D_H:M:S',
      )])
 def since_fixture(tmp_path, request):
     """Fixture for since command."""
