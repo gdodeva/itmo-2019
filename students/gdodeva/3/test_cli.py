@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import subprocess  # noqa: S404
-from cli import contains_entered, ls_entered
-from cli import mk_entered, rm_entered, since_entered
+
+from cli import contains_entered, ls_entered  # noqa I001
+from cli import mk_entered, rm_entered, since_entered  # noqa I001
 
 
 def test_ls_entered(ls_fixture):
