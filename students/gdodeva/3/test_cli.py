@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""Tests for homework 3."""
 import subprocess  # noqa: S404
-
 from cli import contains_entered, ls_entered
 from cli import mk_entered, rm_entered, since_entered
 
@@ -32,11 +30,12 @@ def test_since_entered(since_fixture):
     assert since_entered(
         since_fixture[0],
         since_fixture[1],
-        ) == since_fixture[2]
+    ) == since_fixture[2]
 
 
 def test_integration(integration_fixture):
     """Integration Tests."""
     command, parameter = integration_fixture
-    callable_string = 'python students/gdodeva/3/cli.py {0} {1}'.format(command, parameter)
-    assert subprocess.call(callable_string, shell=True) == 0  # noqa: S603
+    callable_string = 'python students/Krokos1/3/cli.py {0} {1}'
+    callable_string = callable_string.format(command, parameter)
+    assert subprocess.call(callable_string, shell=True) == 0  # noqa: S602
