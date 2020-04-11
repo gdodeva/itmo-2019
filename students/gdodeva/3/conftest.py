@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""Conftest file for homework 3."""
+"""Conftest file homework 3."""
 import pytest  # noqa I001
 import os  # noqa I001
 
