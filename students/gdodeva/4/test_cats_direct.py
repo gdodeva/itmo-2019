@@ -32,8 +32,8 @@ class CatsDirectTester(unittest.TestCase):  # noqa WPS230
 
     def test_save_cat(self):
         """Save_cat function test."""
-        assert os.path.isfile('image.jpg')
-        with open('image.jpg', 'rb') as img:
+        assert os.path.isfile('students/Krokos1/4/image.jpg')
+        with open('students/Krokos1/4/image.jpg', 'rb') as img:
             cats_direct.save_cat(
                 index=1,
                 fact='cats are great',
@@ -45,7 +45,7 @@ class CatsDirectTester(unittest.TestCase):  # noqa WPS230
 
     def test_integration(self):
         """Integration test."""
-        callable_string = 'python cats_direct.py {0}'  # noqa E800
+        callable_string = 'python students/gdodeva/4/cats_direct.py {0}'  # noqa E800
         callable_string = callable_string.format('--count=1')
         assert subprocess.call(callable_string, shell=True) == 0  # noqa: S602, E501
 
