@@ -6,7 +6,7 @@ from datetime import datetime
 
 
 def create_parser():
-    """Create parser for command line arguments."""
+    """Create parser for command line."""
     parser = argparse.ArgumentParser()
     parser.add_argument(
         'command',
