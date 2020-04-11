@@ -16,8 +16,6 @@ def create_parser():
     )
     return parser
 
-
-
 def ls_entered(directory=None):
     """Ls command functionality."""
     if directory is None:
