@@ -8,7 +8,7 @@ import os  # noqa I001
 dot = '.'
 directory = 'directory'
 test_file = 'testFile.py'
-name_py = 'name1.py'
+name_py = 'name.py'
 date_time = '2017-01-03_02:02:02'
 
 
