@@ -8,7 +8,7 @@ import os  # noqa I001
 dot = '.'
 directory = 'directory'
 test_file = 'testFile.py'
-name_py = 'name.py'
+name_py = 'name1.py'
 date_time = '2017-01-03_02:02:02'
 
 
@@ -51,7 +51,7 @@ def ls_fixture(tmp_path, request):
 
 
 @pytest.fixture(params=[
-    ('name.py', True),
+    (name_py, True),
     ('имя.py', True),
     ('conftest1.py', False),
     ('unable/.py', False),
