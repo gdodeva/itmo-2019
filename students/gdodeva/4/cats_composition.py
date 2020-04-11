@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from typing import Callable, Tuple
-from urllib3 import HTTPResponse
+from urllib3 import HTTPResponse  # noqa I003
 
 # We reuse implementation from the direct version:
 from cats_direct import (
