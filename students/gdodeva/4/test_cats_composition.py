@@ -11,8 +11,8 @@ from cats_direct import fetch_cat_fact, fetch_cat_image, save_cat
 
 
 class CatsCompositionTests(unittest.TestCase):
-      """Cats_composition tests class."""
-        
+    """Cats_composition tests class."""
+
     @pytest.mark.remote_data
     def test_main(self):
         """Main function test."""
@@ -34,7 +34,7 @@ class CatsCompositionTests(unittest.TestCase):
 
     def test_integration(self):
         """Test func."""
-        format_str = 'python cats_composition.py {0}'  # noqa E800
+        format_str = 'python students/gdodeva/4/cats_composition.py {0}'  # noqa E800
         command_str = format_str.format('--count=1')
         assert subprocess.call(command_str, shell=True) == 0  # noqa: S602, E501
 
