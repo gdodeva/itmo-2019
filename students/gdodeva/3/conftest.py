@@ -51,7 +51,7 @@ def ls_fixture(tmp_path, request):
 
 
 @pytest.fixture(params=[
-    (name_py, True),
+    ('name.py', True),
     ('имя.py', True),
     ('conftest1.py', False),
     ('unable/.py', False),
