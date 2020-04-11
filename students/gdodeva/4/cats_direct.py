@@ -3,20 +3,15 @@
 import argparse
 import shutil
 from typing import Tuple
-
-import os
-
-import requests
-
-from urllib3 import HTTPResponse
+import os  # noqa I001
+import requests  # noqa I003
+from urllib3 import HTTPResponse  # noqa I001
 
 
 def create_parser() -> argparse.ArgumentParser:
     """Creates parser for command line arguments.
-
     >>> type(create_parser())
     <class 'argparse.ArgumentParser'>
-
     """
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -29,10 +24,8 @@ def create_parser() -> argparse.ArgumentParser:
 
 def fetch_cat_fact() -> str:
     """Fetches cat's fact.
-
     >>> type(fetch_cat_fact())
     <class 'str'>
-
     """
     response = requests.get('https://cat-fact.herokuapp.com/facts/random')
     response.raise_for_status()
@@ -41,12 +34,10 @@ def fetch_cat_fact() -> str:
 
 def fetch_cat_image() -> Tuple[str, HTTPResponse]:
     """Fetches cat's image.
-
     >>> type(fetch_cat_image())
     <class 'tuple'>
     >>> type(fetch_cat_image()[1])
     <class 'urllib3.response.HTTPResponse'>
-
     """
     response = requests.get('https://aws.random.cat/meow')
     response.raise_for_status()
@@ -63,7 +54,6 @@ def save_cat(
     image: Tuple[str, HTTPResponse],
 ) -> None:
     """Saves cat's info to the disk.
-
     >>> with open('image.jpg', 'rb') as img:
     ...     save_cat(index=1, fact='cats are great', image=('jpg', img))
     >>> os.path.isfile('temp/cat_1_fact.txt')
@@ -72,7 +62,6 @@ def save_cat(
     True
     >>> os.path.isdir('temp')
     True
-
     """
     if not os.path.isdir('temp'):
         os.mkdir('temp')
