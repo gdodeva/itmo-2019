@@ -3,7 +3,9 @@
 import os
 import subprocess  # noqa S404
 import unittest
+
 import pytest
+
 import cats_direct
 
 
