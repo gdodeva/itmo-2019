@@ -84,7 +84,7 @@ def since_entered(given_datetime, directory=None):  # noqa C901
 
 
 def main():
-    """Love flake8. Main function."""
+    """Main function."""
     command = create_parser().parse_args()
     caller = command.command[0]
     parameter = None
