@@ -6,7 +6,7 @@ lint:
 
 .PHONY: unit
 unit:
-	poetry run sh bin/test.sh
+
 
 .PHONY: typecheck
 typecheck:
@@ -16,7 +16,6 @@ typecheck:
 package:
 	poetry check
 	poetry run pip check
-	
 
 .PHONY: test
 test: lint typecheck unit package
