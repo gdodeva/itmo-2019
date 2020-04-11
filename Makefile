@@ -8,7 +8,7 @@ lint:
 unit:
 	poetry run sh bin/test.sh
 
-.PHONY: typecheck
+
 typecheck:
 	poetry run sh bin/typecheck.sh
 
