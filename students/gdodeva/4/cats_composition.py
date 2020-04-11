@@ -13,7 +13,7 @@ from cats_direct import (
 
 
 class CatProcessor(object):
-    """
+    """  # noqa D204
 
     Knows exactly how to process cats.
 
