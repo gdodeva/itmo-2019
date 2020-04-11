@@ -11,8 +11,8 @@ from cats_direct import fetch_cat_fact, fetch_cat_image, save_cat
 
 
 class CatsCompositionTests(unittest.TestCase):
-    
-    """Cats_composition tests class."""
+      """Cats_composition tests class."""
+        
     @pytest.mark.remote_data
     def test_main(self):
         """Main function test."""
