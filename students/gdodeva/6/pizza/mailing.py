@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.core.mail import send_mail
+
 from pizzapp.settings import EMAIL_HOST_USER
 
 
