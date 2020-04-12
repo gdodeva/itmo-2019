@@ -29,7 +29,7 @@ class Pizza(models.Model):
 
     def for_tests(self):
         """Returns string representation of Pizza."""
-        return "{0} {1}".format(self.title, self.price)
+        return '{0} {1}'.format(self.title, self.price)
 
 
 class OrderType(Enum):
@@ -46,10 +46,10 @@ class Order(models.Model):
     order_date = models.DateField(default=date.today)
     pizzas = models.ManyToManyField(Pizza)
     delivery_address = models.CharField(max_length=100)
-    customer_email = models.EmailField(max_length=50)
+    customer_email = models.EmailField(max_length=50)  # noqa: WPS432
     email_sent = models.BooleanField(default=False)
     status = models.CharField(
-        max_length=50,
+        max_length=50,  # noqa: WPS432
         choices=[
             ('ACCEPTED', 'ACCEPTED'),
             ('COOKING', 'COOKING'),
@@ -64,13 +64,10 @@ class Order(models.Model):
         """Calculates delivery time for Order."""
         working_hours = datetime.now().hour
         number_of_pizzas = self.pizzas.count()
-        if working_hours >= 10 and working_hours < 22:
-            delivery_time = number_of_pizzas * 10 + 40
-        else:
-            delivery_time = number_of_pizzas * 10 + 60
-        return delivery_time
+        if working_hours >= 10 and working_hours < 22:  # noqa: WPS432, WPS333
+            return number_of_pizzas * 10 + 40  # noqa: WPS432
+        return number_of_pizzas * 10 + 60
 
     def __str__(self):
         """Returns string representation of Order."""
-        return 'Order date {0}. Status: {1}. Pizzas: {2}'.format(self.order_date,
-                                                                 self.status, self.pizzas.count())
+        return 'Oder date {0}. Status: {1}. Pizas: {2}'.format(self.order_date, self.status, self.pizzas.count())  # noqa: E501
