@@ -2,7 +2,7 @@
 
 from typing import Dict
 
-from pizza.models import Order
+from pizzapp.models import Order
 
 
 def overall_statistics(orders) -> int:
