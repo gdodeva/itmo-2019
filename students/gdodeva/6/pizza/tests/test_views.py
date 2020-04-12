@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-  # noqa: E902
 
 from django.test import TestCase
-
 from pizza.models import Ingredient, Pizza
 
 
