@@ -39,13 +39,3 @@ class PostTest(TestCase):
         """Testing Views getting API Pizza."""
         response = self.client.get(path='/api/pizza/')
         assert response.status_code == 200  # noqa: WPS432
-
-    def test_loading(self):
-        """Tests for load."""
-        response = self.client.get('/api/statistics/pizza')
-        assert response.status_code == 200  # noqa: WPS432
-        assert response.json() == {
-            'all': 5,
-            'pizzas': {'4': 2, '5': 3},
-            'statuses': {'ACCEPTED': 3, 'COOKING': 2, 'DELIVERY': 0, 'FINISHED': 0},  # noqa: E501
-        }
