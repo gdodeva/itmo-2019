@@ -5,7 +5,7 @@ import os
 import django
 from django.conf import settings
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pizza.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pizzapp.settings')
 
 
 def pytest_configure():
