@@ -71,4 +71,3 @@ class Order(models.Model):
     def __str__(self):
         """Returns string representation of Order."""
         return 'Oder date {0}. Status: {1}. Pizas: {2}'.format(self.order_date, self.status, self.pizzas.count())  # noqa: E501
-   
