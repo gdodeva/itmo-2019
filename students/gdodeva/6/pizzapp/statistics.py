@@ -30,4 +30,3 @@ def status_statistics(orders) -> Dict[str, int]:
     for status in statuses:
         status_dict[status] = orders.filter(status=status).count()
     return status_dict
-    
